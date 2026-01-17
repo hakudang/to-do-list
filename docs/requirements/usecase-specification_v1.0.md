@@ -7,189 +7,161 @@ Status  : Draft → To be Frozen
 Scope   : Frontend Web App
 ```
 ## 1. ユースケース一覧（Use Case List）
-UC-ID	ユースケース名	概要
-UC-01	タスクを追加する	Thêm task mới
-UC-02	タスクを編集する	Sửa nội dung task
-UC-03	タスクを削除する	Xóa task
-UC-04	タスクを完了にする	Đánh dấu task hoàn thành
-UC-05	タスクを一覧・絞り込み表示する	Hiển thị & lọc task
+| UC-ID | ユースケース名         | 概要                       |
+| ----- | --------------- | ------------------------ |
+| UC-01 | タスクを追加する        | Thêm task mới            |
+| UC-02 | タスクを編集する        | Sửa nội dung task        |
+| UC-03 | タスクを削除する        | Xóa task                 |
+| UC-04 | タスクを完了にする       | Đánh dấu task hoàn thành |
+| UC-05 | タスクを一覧・絞り込み表示する | Hiển thị & lọc task      |
+
 ## 2. UC-01 タスクを追加する（Add Task）
-基本情報
+### 基本情報
 
-Primary Actor: User
+- Primary Actor: User
+- 関連画面: SC-01 To-Do Main Screen
+- 対応FR: FR-01
 
-関連画面: SC-01 To-Do Main Screen
+### 事前条件（Pre-condition）
 
-対応FR: FR-01
+- Ứng dụng đã được mở
+- Người dùng đang ở màn hình chính
 
-事前条件（Pre-condition）
+### 事後条件（Post-condition）
 
-Ứng dụng đã được mở
+- Task mới được thêm vào danh sách
+- Dữ liệu được lưu lại
 
-Người dùng đang ở màn hình chính
+### 基本フロー（Basic Flow）
 
-事後条件（Post-condition）
+1. User nhập nội dung task
+2. User nhấn nút Add hoặc Enter
+3. System kiểm tra dữ liệu nhập
+4. System thêm task mới vào danh sách
+5. System hiển thị task vừa thêm
 
-Task mới được thêm vào danh sách
+### 代替フロー（Alternate Flow）
 
-Dữ liệu được lưu lại
-
-基本フロー（Basic Flow）
-
-User nhập nội dung task
-
-User nhấn nút Add hoặc Enter
-
-System kiểm tra dữ liệu nhập
-
-System thêm task mới vào danh sách
-
-System hiển thị task vừa thêm
-
-代替フロー（Alternate Flow）
-
-AF-01: Nội dung task rỗng
+- AF-01: Nội dung task rỗng
 → System không thêm task và giữ nguyên màn hình
 
 ## 3. UC-02 タスクを編集する（Edit Task）
-基本情報
+### 基本情報
 
-Primary Actor: User
-
-関連画面: SC-01
-
-対応FR: FR-03
-
+- Primary Actor: User
+- 関連画面: SC-01
+- 対応FR: FR-03
 事前条件
 
-Task tồn tại trong danh sách
+### 事前条件（Pre-condition）
 
-事後条件
+- Task tồn tại trong danh sách
 
-Nội dung task được cập nhật
+### 事後条件（Post-condition）
 
-Dữ liệu được lưu lại
+- Nội dung task được cập nhật
+- Dữ liệu được lưu lại
 
-基本フロー
+### 基本フロー（Basic Flow）
 
-User chọn task cần sửa
-
-User chỉnh sửa nội dung
-
-User xác nhận thao tác sửa
-
-System cập nhật nội dung task
+1. User chọn task cần sửa
+2. User chỉnh sửa nội dung
+3. User xác nhận thao tác sửa
+4. System cập nhật nội dung task
+5. System hiển thị task đã được sửa
 
 System hiển thị task đã được sửa
 
-代替フロー
+### 代替フロー（Alternate Flow）
 
-AF-01: User hủy thao tác
+- AF-01: User hủy thao tác
 → System không thay đổi dữ liệu
 
 ## 4. UC-03 タスクを削除する（Delete Task）
-基本情報
+### 基本情報
 
-Primary Actor: User
+- Primary Actor: User
+- 関連画面: SC-01
+- 対応FR: FR-04
 
-関連画面: SC-01
+### 事前条件（Pre-condition）
 
-対応FR: FR-04
+- Task tồn tại
 
-事前条件
+### 事後条件（Post-condition）
 
-Task tồn tại
+- Task bị xóa khỏi danh sách
+- Dữ liệu được cập nhật
 
-事後条件
+### 基本フロー（Basic Flow）
 
-Task bị xóa khỏi danh sách
-
-Dữ liệu được cập nhật
-
-基本フロー
-
-User nhấn nút Delete của task
-
-System xóa task khỏi danh sách
-
-System cập nhật hiển thị
+1. User nhấn nút Delete của task
+2. System xóa task khỏi danh sách
+3. System cập nhật hiển thị
 
 ## 5. UC-04 タスクを完了にする（Complete Task）
-基本情報
+### 基本情報
 
-Primary Actor: User
+- Primary Actor: User
+- 関連画面: SC-01
+- 対応FR: FR-05
 
-関連画面: SC-01
+### 事前条件（Pre-condition）
 
-対応FR: FR-05
+- Task tồn tại
 
-事前条件
+### 事後条件（Post-condition）
+- Trạng thái task được thay đổi
 
-Task tồn tại
+### 基本フロー（Basic Flow）
 
-事後条件
-
-Trạng thái task được thay đổi
-
-基本フロー
-
-User click checkbox của task
-
-System đổi trạng thái task (active ↔ done)
-
-System cập nhật hiển thị
+1. User click checkbox của task
+2. System đổi trạng thái task (active ↔ done)
+3. System cập nhật hiển thị
 
 ## 6. UC-05 タスクを一覧・絞り込み表示する（View & Filter Tasks）
-基本情報
+### 基本情報
 
-Primary Actor: User
+- Primary Actor: User
+- 関連画面: SC-01
+- 対応FR: FR-02, FR-06
 
-関連画面: SC-01
+### 事前条件（Pre-condition）
 
-対応FR: FR-02, FR-06
+- Có hoặc không có task
 
-事前条件
+### 事後条件（Post-condition）
 
-Có hoặc không có task
+- Danh sách task được hiển thị theo điều kiện lọc
 
-事後条件
+### 基本フロー（Basic Flow）
 
-Danh sách task được hiển thị theo điều kiện lọc
-
-基本フロー
-
-User mở màn hình chính
-
-System hiển thị toàn bộ task
-
-User chọn điều kiện lọc (All / Active / Done)
-
-System hiển thị task phù hợp
+1. User mở màn hình chính
+2. System hiển thị toàn bộ task
+3. User chọn điều kiện lọc (All / Active / Done)
+4. System hiển thị task phù hợp
 
 ## 7. 共通ルール（Common Rules）
 
-Mọi thao tác đều thực hiện trên một màn hình duy nhất
-
-Sau mỗi thao tác, hệ thống không chuyển màn hình
-
-Thay đổi dữ liệu phải được lưu ngay
+- Mọi thao tác đều thực hiện trên một màn hình duy nhất
+- Sau mỗi thao tác, hệ thống không chuyển màn hình
+- Thay đổi dữ liệu phải được lưu ngay
 
 ## 8. ユースケースと他ドキュメントの対応関係
-UC-ID	FR	BR	Screen
-UC-01	FR-01	BR-01～03	SC-01
-UC-02	FR-03	BR-02,05	SC-01
-UC-03	FR-04	BR-06	SC-01
-UC-04	FR-05	BR-04	SC-01
-UC-05	FR-02,06	BR-08	SC-01
-🔒 BrSEチェックポイント
+| UC-ID | FR       | BR       | Screen |
+| ----- | -------- | -------- | ------ |
+| UC-01 | FR-01    | BR-01～03 | SC-01  |
+| UC-02 | FR-03    | BR-02,05 | SC-01  |
+| UC-03 | FR-04    | BR-06    | SC-01  |
+| UC-04 | FR-05    | BR-04    | SC-01  |
+| UC-05 | FR-02,06 | BR-08    | SC-01  |
 
-Actor rõ ràng ✔
+🔒 チェックポイント
 
-Pre/Post-condition đầy đủ ✔
-
-Basic / Alternate flow tách bạch ✔
-
-Trace được sang FR / BR / Screen ✔
+- Actor rõ ràng ✔
+- Pre/Post-condition đầy đủ ✔
+- Basic / Alternate flow tách bạch ✔
+- Trace được sang FR / BR / Screen ✔
 
 👉 Use Case này đủ điều kiện Freeze.
 Dev có thể code, QA có thể viết test case ngay.
