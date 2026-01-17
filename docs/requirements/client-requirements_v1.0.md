@@ -78,3 +78,8 @@ Khách hàng yêu cầu hệ thống phải cho phép:
 - Một web app đơn giản
 - Người dùng có thể sử dụng ngay sau khi mở
 - Phù hợp cho quản lý công việc cá nhân hằng ngày
+
+## 10. 改訂履歴（Lịch sử chỉnh sửa）
+| Version | Date       | Description          | Author   |
+| ------- | ---------- | -------------------- | -------- |
+| 1.0     | 2026-01-17 | 初版作成             | Client   |

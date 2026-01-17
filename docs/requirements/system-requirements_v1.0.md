@@ -134,6 +134,11 @@ Browser
 - Không đảm bảo dữ liệu nếu user xóa cache trình duyệt
 - Không yêu cầu SEO
 
+## 12. 改訂履歴（Revision History）
+| Version | Date       | Description          | Author   |
+| ------- | ---------- | -------------------- | -------- |
+| 1.0     | 2026-01-17 | 初版作成             | BrSE     |
+
 ## 🔒 Logic Freeze Check (BrSE góc nhìn)
 
 - Scope rõ ✔
