@@ -10,6 +10,7 @@ Khách hàng muốn một web app To-Do List đơn giản, chạy trên trình d
 - Quản lý công việc cá nhân
 - Theo dõi trạng thái hoàn thành
 - Không cần đăng nhập
+
 ### CR-02. Đối tượng sử dụng
 
 - Cá nhân (single user)
@@ -46,75 +47,68 @@ Khách hàng muốn một web app To-Do List đơn giản, chạy trên trình d
 
 ### UC-01 – Add Task
 
-Actor: User
+- Actor: User
+- Mô tả: Thêm công việc mới
+- Pre-condition: Ứng dụng đã mở
+- Post-condition: Task được thêm vào danh sách
 
-Mô tả: Thêm công việc mới
+**Basic Flow**
 
-Pre-condition: Ứng dụng đã mở
-
-Post-condition: Task được thêm vào danh sách
-
-Basic Flow
-
-User nhập nội dung task
-
-User nhấn nút Add / Enter
-
-System validate dữ liệu
-
-System thêm task và hiển thị
+1. User nhập nội dung task
+2. User nhấn nút Add / Enter
+3. System validate dữ liệu
+4. System thêm task và hiển thị
 
 ### UC-02 – Edit Task
 
-Actor: User
+- Actor: User
+- Mô tả: Sửa nội dung task
+- Pre-condition: Ứng dụng đã mở
+- Post-condition: Task được cập nhật
 
-Mô tả: Sửa nội dung task
+**Basic Flow**
 
-Basic Flow
-
-User chọn task
-
-User sửa nội dung
-
-User xác nhận
-
-System cập nhật task
+1. User chọn task cần sửa
+2. User sửa nội dung
+3. User xác nhận
+4. System cập nhật task
 
 ### UC-03 – Delete Task
 
-Actor: User
+- Actor: User
+- Mô tả: Xóa task
+- Pre-condition: Ứng dụng đã mở
+- Post-condition: Task bị xóa
 
-Mô tả: Xóa task
+**Basic Flow**
 
-Basic Flow
-
-User nhấn Delete
-
-System xóa task khỏi danh sách
+1. User nhấn Delete nút
+2. User nhấn Delete
+3. System xóa task khỏi danh sách
 
 ### UC-04 – Complete Task
 
-Actor: User
+- Actor: User
+- Mô tả: Đánh dấu hoàn thành
+- Pre-condition: Ứng dụng đã mở
+- Post-condition: Task được cập nhật trạng thái
 
-Mô tả: Đánh dấu hoàn thành
+**Basic Flow**
 
-Basic Flow
-
-User click checkbox
-
-System cập nhật trạng thái task
+1. User click checkbox
+2. System cập nhật trạng thái task
 
 ### UC-05 – Filter Tasks
 
-Actor: User
+- Actor: User
+- Mô tả: Lọc danh sách task
+- Pre-condition: Ứng dụng đã mở
+- Post-condition: Danh sách task được lọc
 
-Mô tả: Lọc danh sách task
+**Basic Flow**
 
-Basic Flow
-
-User chọn filter (All / Active / Done)
-
-System hiển thị task tương ứng
+1. User chọn filter (All / Active / Done)
+2. System hiển thị task tương ứng
 
 ## 4️⃣ ST – Screen Transition
 
