@@ -145,13 +145,13 @@ Scope   : Frontend Web App
 - Thay đổi dữ liệu phải được lưu ngay
 
 ## 8. ユースケースと他ドキュメントの対応関係
-| UC-ID | FR       | BR       | Screen |
-| ----- | -------- | -------- | ------ |
-| UC-01 | FR-01    | BR-01～03 | SC-01  |
-| UC-02 | FR-03    | BR-02,05 | SC-01  |
-| UC-03 | FR-04    | BR-06    | SC-01  |
-| UC-04 | FR-05    | BR-04    | SC-01  |
-| UC-05 | FR-02,06 | BR-08    | SC-01  |
+| UC-ID | FR       | Screen |
+| ----- | -------- | ------ |
+| UC-01 | FR-01    | SC-01  |
+| UC-02 | FR-03    | SC-01  |
+| UC-03 | FR-04    | SC-01  |
+| UC-04 | FR-05    | SC-01  |
+| UC-05 | FR-02,06 | SC-01  |
 
 ## 9. 改訂履歴（Revision History）
 | Version | Date       | Description          | Author   |
