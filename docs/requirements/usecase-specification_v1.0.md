@@ -51,7 +51,6 @@ Scope   : Frontend Web App
 - Primary Actor: User
 - 関連画面: SC-01
 - 対応FR: FR-03
-事前条件
 
 ### 事前条件（Pre-condition）
 
@@ -69,8 +68,6 @@ Scope   : Frontend Web App
 3. User xác nhận thao tác sửa
 4. System cập nhật nội dung task
 5. System hiển thị task đã được sửa
-
-System hiển thị task đã được sửa
 
 ### 代替フロー（Alternate Flow）
 
