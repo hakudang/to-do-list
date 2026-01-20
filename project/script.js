@@ -11,8 +11,10 @@ function addTask() {
         alert("You must write something!");
         return;
     }
+    /* =========================
+      * FR-01 | Thêm task mới
+      * ========================= */
 
-    // FR-01 | Thêm task mới
     const li = document.createElement('li');
 
     li.innerHTML = `
@@ -33,7 +35,10 @@ function addTask() {
     const taskSpan = li.querySelector("span");
     const deleteBtn = li.querySelector(".delete-btn");
 
-    // FR-05 | Đánh dấu hoàn thành
+    /* =========================
+     * FR-05 | Đánh dấu hoàn thành
+     * ========================= */
+
     // Gắn event listener cho checkbox
     checkbox.addEventListener("click", function () {
         // thêm hoặc bỏ class "completed" cho thẻ <li>
@@ -43,7 +48,9 @@ function addTask() {
         updateCounters();
     });
 
-    // FR-03 | Sửa task
+    /* =========================
+     * FR-03 | Sửa task
+     * ========================= */
     editBtn.addEventListener("click", function () {
         const update = prompt("Edit task:", taskSpan.textContent);
         if (update !== null) {
@@ -56,6 +63,15 @@ function addTask() {
         updateCounters();
     });
 
+    /* =========================
+     * FR-04 | Xóa task
+     * ========================= */
+    deleteBtn.addEventListener("click", function () {
+        if (confirm("Are you sure you want to delete this task?")) {
+            li.remove();
+            updateCounters();
+        }
+    });
 
 }
 
