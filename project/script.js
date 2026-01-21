@@ -1,11 +1,11 @@
-const taskInput = document.querySelector(".task-input input"),
-filters = document.querySelectorAll(".filters span"),
-clearAll = document.querySelector(".clear-btn"),
-taskBox = document.querySelector(".task-box");
+const taskInput = document.querySelector(".task-input input");
+const filters = document.querySelectorAll(".filters span");
+const clearAll = document.querySelector(".clear-btn") ;
+const taskBox = document.querySelector(".task-box");
 
-let editId,
-isEditTask = false,
-todos = JSON.parse(localStorage.getItem("todo-list")); // Lấy mảng todos từ localStorage
+let editId;
+let isEditTask = false;
+let todos = JSON.parse(localStorage.getItem("todo-list")); 
 
 filters.forEach(btn => {
     btn.addEventListener("click", () => {
