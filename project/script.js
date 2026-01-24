@@ -5,13 +5,14 @@ const taskBox = document.querySelector(".task-box");
 
 let editId;
 let isEditTask = false;
-let todos = JSON.parse(localStorage.getItem("todo-list")); 
+let todos = JSON.parse(localStorage.getItem("todo-list"));
+
 
 filters.forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelector("span.active").classList.remove("active");
         btn.classList.add("active");
-        showTodo(btn.id);
+        showTodo(btn.id); 
     });
 });
 
@@ -19,12 +20,12 @@ function showTodo(filter) {
     let liTag = "";
     if(todos) {
         todos.forEach((todo, id) => {
-            let completed = todo.status == "completed" ? "checked" : "";
+            let done = todo.status == "done" ? "checked" : "";
             if(filter == todo.status || filter == "all") {
                 liTag += `<li class="task">
                             <label for="${id}">
-                                <input onclick="updateStatus(this)" type="checkbox" id="${id}" ${completed}>
-                                <p class="${completed}">${todo.name}</p>
+                                <input onclick="updateStatus(this)" type="checkbox" id="${id}" ${done}>
+                                <p class="${done}">${todo.name}</p>
                             </label>
                             <div class="settings">
                                 <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>
@@ -38,6 +39,9 @@ function showTodo(filter) {
         });
     }
     taskBox.innerHTML = liTag || `<span>You don't have any task here</span>`;
+
+    updateCounters();
+
     let checkTask = taskBox.querySelectorAll(".task");
     !checkTask.length ? clearAll.classList.remove("active") : clearAll.classList.add("active");
     taskBox.offsetHeight >= 300 ? taskBox.classList.add("overflow") : taskBox.classList.remove("overflow");
@@ -58,12 +62,14 @@ function updateStatus(selectedTask) {
     let taskName = selectedTask.parentElement.lastElementChild;
     if(selectedTask.checked) {
         taskName.classList.add("checked");
-        todos[selectedTask.id].status = "completed";
+        todos[selectedTask.id].status = "done";
     } else {
         taskName.classList.remove("checked");
         todos[selectedTask.id].status = "pending";
     }
     localStorage.setItem("todo-list", JSON.stringify(todos))
+
+    updateCounters();
 }
 
 function editTask(taskId, textName) {
@@ -104,3 +110,12 @@ taskInput.addEventListener("keyup", e => {
         showTodo(document.querySelector("span.active").id);
     }
 });
+
+function updateCounters() {
+    const totalCounter = todos ? todos.length : 0;
+    const doneCounter = todos ? todos.filter(todo => todo.status === 'done').length : 0;
+    const pendingCounter = todos ? todos.filter(todo => todo.status === 'pending').length : 0;
+    document.getElementById('total-count').innerText = totalCounter;
+    document.getElementById('done-count').innerText = doneCounter;
+    document.getElementById('pending-count').innerText = pendingCounter;
+}

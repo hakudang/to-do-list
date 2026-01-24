@@ -29,10 +29,10 @@ Mọi thiết kế, phát triển và kiểm thử phải tuân thủ đầy đ�
 
 Task chỉ có 2 trạng thái:
 
- - active
+ - pending
  - done
 
-### BR-05 Editable Completed Task
+### BR-05 Editable Done Task
 
 - Task ở trạng thái done vẫn được phép chỉnh sửa nội dung
 

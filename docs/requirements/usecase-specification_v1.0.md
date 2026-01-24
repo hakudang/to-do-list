@@ -96,7 +96,7 @@ Scope   : Frontend Web App
 2. System xóa task khỏi danh sách
 3. System cập nhật hiển thị
 
-## 5. UC-04 タスクを完了にする（Complete Task）
+## 5. UC-04 タスクを完了にする（Done Task）
 ### 基本情報
 
 - Primary Actor: User
@@ -113,7 +113,7 @@ Scope   : Frontend Web App
 ### 基本フロー（Basic Flow）
 
 1. User click checkbox của task
-2. System đổi trạng thái task (active ↔ done)
+2. System đổi trạng thái task (pending ↔ done)
 3. System cập nhật hiển thị
 
 ## 6. UC-05 タスクを一覧・絞り込み表示する（View & Filter Tasks）
@@ -135,7 +135,7 @@ Scope   : Frontend Web App
 
 1. User mở màn hình chính
 2. System hiển thị toàn bộ task
-3. User chọn điều kiện lọc (All / Active / Done)
+3. User chọn điều kiện lọc (all / pending / done)
 4. System hiển thị task phù hợp
 
 ## 7. 共通ルール（Common Rules）

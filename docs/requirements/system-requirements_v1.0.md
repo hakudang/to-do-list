@@ -46,7 +46,7 @@ Browser
 | FR-03 | Sửa task                       |
 | FR-04 | Xóa task                       |
 | FR-05 | Đánh dấu hoàn thành            |
-| FR-06 | Lọc task (All / Active / Done) |
+| FR-06 | Lọc task (all / pending / done) |
 | FR-07 | Lưu dữ liệu local              |
 
 👉 Chi tiết xử lý được định nghĩa tại UC & BR
@@ -83,7 +83,7 @@ Browser
 | ---------- | -------- | ------------------ |
 | id         | string   | Định danh duy nhất |
 | title      | string   | Nội dung task      |
-| status     | enum     | active / done      |
+| status     | enum     | pending / done      |
 | created_at | datetime | Thời điểm tạo      |
 | updated_at | datetime | Thời điểm cập nhật |
 
@@ -105,7 +105,7 @@ Browser
 - Task list
 - Checkbox hoàn thành
 - Button Edit / Delete
-- Filter buttons (All / Active / Done)
+- Filter buttons (all / pending / done)
 
 ## 8. ユースケース対応表（Traceability）
 | UC-ID          | FR-ID | Screen |
