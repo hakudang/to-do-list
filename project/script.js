@@ -1,6 +1,6 @@
 const taskInput = document.querySelector(".task-input input");
 const filters = document.querySelectorAll(".filters span");
-const clearAll = document.querySelector(".clear-btn") ;
+const clearAll = document.querySelector(".clear-btn");
 const taskBox = document.querySelector(".task-box");
 
 let editId;
@@ -12,16 +12,16 @@ filters.forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelector("span.active").classList.remove("active");
         btn.classList.add("active");
-        showTodo(btn.id); 
+        showTodo(btn.id);
     });
 });
 
 function showTodo(filter) {
     let liTag = "";
-    if(todos) {
+    if (todos) {
         todos.forEach((todo, id) => {
             let done = todo.status == "done" ? "checked" : "";
-            if(filter == todo.status || filter == "all") {
+            if (filter == todo.status || filter == "all") {
                 liTag += `<li class="task">
                             <label for="${id}">
                                 <input onclick="updateStatus(this)" type="checkbox" id="${id}" ${done}>
@@ -52,7 +52,7 @@ function showMenu(selectedTask) {
     let menuDiv = selectedTask.parentElement.lastElementChild;
     menuDiv.classList.add("show");
     document.addEventListener("click", e => {
-        if(e.target.tagName != "I" || e.target != selectedTask) {
+        if (e.target.tagName != "I" || e.target != selectedTask) {
             menuDiv.classList.remove("show");
         }
     });
@@ -60,7 +60,7 @@ function showMenu(selectedTask) {
 
 function updateStatus(selectedTask) {
     let taskName = selectedTask.parentElement.lastElementChild;
-    if(selectedTask.checked) {
+    if (selectedTask.checked) {
         taskName.classList.add("checked");
         todos[selectedTask.id].status = "done";
     } else {
@@ -96,16 +96,24 @@ clearAll.addEventListener("click", () => {
 
 taskInput.addEventListener("keyup", e => {
     let userTask = taskInput.value.trim();
-    if(e.key == "Enter" && userTask) {
-        if(!isEditTask) {
+    
+    // BR-03: Non-Empty Task Content , chặn lỗi input rỗng
+    if (e.key == "Enter" && userTask) {
+        // validation
+        if (!validation(userTask)) {
+            return;
+        }
+
+        if (!isEditTask) {
             todos = !todos ? [] : todos;
-            let taskInfo = {name: userTask, status: "pending"};
+            let taskInfo = { name: userTask, status: "pending" };
             todos.push(taskInfo);
         } else {
             isEditTask = false;
             todos[editId].name = userTask;
         }
         taskInput.value = "";
+        
         // lưu vào localStorage
         localStorage.setItem("todo-list", JSON.stringify(todos));
         showTodo(document.querySelector("span.active").id);
@@ -119,4 +127,20 @@ function updateCounters() {
     document.getElementById('total-count').innerText = totalCounter;
     document.getElementById('done-count').innerText = doneCounter;
     document.getElementById('pending-count').innerText = pendingCounter;
+}
+
+function validation(input) {
+    let validationMessage = document.querySelector(".validation-message");
+    let message = "";    
+    
+    // BR-02: Task Content Length (max 120 characters)
+    if (input.length > 120) {
+        message += "BR-02 - Nội dung task vượt quá 120 ký tự.\n";
+    }
+
+    validationMessage.innerText = message;
+    taskInput.value = "";
+
+    // Return false nếu có lỗi, true nếu hợp lệ
+    return message.length === 0;
 }

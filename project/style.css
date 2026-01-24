@@ -240,6 +240,12 @@ li {
   color: #666;
   margin: 0 10px;
 }
+.validation-message {
+  color: red;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+}
 
 @media (max-width: 400px) {
   body {
