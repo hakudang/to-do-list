@@ -17,8 +17,8 @@ Nhóm này tập trung vào việc xác thực dữ liệu đầu vào theo Vali
 | ID | Mục tiêu kiểm thử | Các bước thực hiện | Kết quả mong đợi | Tham chiếu |
 |----|------------------|-------------------|------------------|------------|
 | TC-01 | Thêm task hợp lệ | 1. Nhập nội dung task hợp lệ.<br>2. Nhấn Enter. | Task mới hiển thị trong danh sách. Trạng thái mặc định là pending. Dữ liệu lưu vào LocalStorage. |FR-01, UC-01, BR-04 |
-| TC-02 | VAL-01: Bỏ trống nội dung | 1. Để trống ô nhập liệu.<br>2. Nhấn Enter. | Hệ thống không thêm task, giữ nguyên màn hình hiện tại. |BR-01, VAL-01 |
-| TC-03 | VAL-02: Nội dung chỉ có khoảng trắng | 1. Nhập "   " (space) hoặc tab vào ô input.<br>2. Nhấn Enter. | Hệ thống không tạo task, không cập nhật dữ liệu. |BR-03, VAL-02 |
+| TC-02 | VAL-01: Bỏ trống nội dung | 1. Để trống ô nhập liệu.<br>2. Nhấn Enter. | Hệ thống không thêm task, giữ nguyên màn hình hiện tại. Hiển thị lỗi. |BR-01, VAL-01 |
+| TC-03 | VAL-02: Nội dung chỉ có khoảng trắng | 1. Nhập "   " (space) hoặc tab vào ô input.<br>2. Nhấn Enter. | Hệ thống không tạo task, không cập nhật dữ liệu. Hiển thị lỗi. |BR-03, VAL-02 |
 | TC-04 | VAL-03: Nội dung quá dài | 1. Nhập nội dung > 120 ký tự.<br>2. Nhấn Enter. | Hệ thống reject input, không tạo task (không tự động cắt chuỗi). Hiển thị lỗi.| BR-02, VAL-03 |
 
 ### 2.2 Nhóm Kiểm thử Chỉnh sửa Task (UC-02 & Business Rules)

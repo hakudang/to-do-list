@@ -2,6 +2,7 @@
  * Unit Tests cho Calculator Application
  * Dựa trên Test Case Specification v1.0 [1-5]
  * Bao phủ các Validation ID (V) và Business Rules (BR)
+ * Test hàm validation(input) trong file validation.js
  */
 
 // Giả lập môi trường DOM nếu chạy trong môi trường Node.js (tùy chọn)

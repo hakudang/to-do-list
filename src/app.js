@@ -135,15 +135,15 @@ function validation(input) {
 
     // TC-02: VAL-01: Bỏ trống nội dung
     if (input.length === 0) {
-        message += "BR-01 - Nội dung task không được để trống.\n";
+        message += "TC-02: VAL-01: Bỏ trống nội dung\n";
     }
     // TC-03: VAL-02: Nội dung chỉ có khoảng trắng
     if (input.trim().length === 0) {
-        message += "BR-01 - Nội dung task không được để trống.\n";
+        message += "TC-03: VAL-02: Nội dung chỉ có khoảng trắng\n";
     }
     // TC-04: VAL-03: Nội dung quá dài
     if (input.length > 120) {
-        message += "BR-02 - Nội dung task vượt quá 120 ký tự.\n";
+        message += "TC-04: VAL-03: Nội dung quá dài \n";
     }
 
     validationMessage.innerText = message;
