@@ -8,7 +8,7 @@ Dựa vào cấu trúc dự án và các tài liệu thiết kế, các kịch b
 - Luồng Tích hợp Lọc & Toàn vẹn dữ liệu (UC-05 + BR-08): Kiểm tra khi chọn filter "Pending" -> Chỉ hiển thị task chưa xong -> Nhưng dữ liệu gốc trong LocalStorage không bị thay đổi.
 - Luồng Tích hợp Ràng buộc (VAL-03 + UI): Kiểm tra khi nhập nội dung > 120 ký tự -> Hệ thống reject -> LocalStorage không bị ghi đè dữ liệu sai.
 
-2. Mã nguồn file integration_tests.js
+## 2. Mã nguồn file integration_tests.js
 File này sử dụng Jest và JSDOM để kiểm tra sự tương tác giữa các thành phần của ứng dụng.
 
 ```js
@@ -159,7 +159,7 @@ describe("Integration Tests - To-Do List Flow", () => {
 
 Để thực hiện chạy file integration_tests.js trong dự án này, cần hiểu rằng ứng dụng To-Do List là một Single Page Application (SPA) chạy hoàn toàn ở phía Client (Client-side only).
 Dựa trên các tài liệu hệ thống và đặc tả kiểm thử, có hai cách để bạn thực hiện kiểm thử tích hợp (Integration Testing):
-### 1. Kiểm thử tích hợp thủ công (Manual Integration Testing)
+### 4.1. Kiểm thử tích hợp thủ công (Manual Integration Testing)
 Đây là phương pháp bám sát theo quy trình được định nghĩa trong Test Case Specification:
 - Môi trường: Mở file index.html trực tiếp trên trình duyệt (Chrome, Edge, hoặc Firefox).
 - Các bước thực hiện:
@@ -168,7 +168,7 @@ Dựa trên các tài liệu hệ thống và đặc tả kiểm thử, có hai 
         - Nhập task và nhấn Enter: Kiểm tra xem UI có hiển thị task mới đồng thời LocalStorage có xuất hiện JSON Array tương ứng không.
         - Đổi trạng thái và Reload trang (F5): Kiểm tra xem sau khi tải lại, trạng thái pending/done có được giữ nguyên như yêu cầu tại BR-07 không.
         - Sử dụng bộ lọc (Filter): Kiểm tra xem khi chọn "Done", UI chỉ hiện task hoàn thành nhưng dữ liệu gốc trong LocalStorage vẫn không bị mất (tuân thủ BR-08).
-### 2. Kiểm thử tích hợp tự động (Automated Integration Testing)
+### 4.2. Kiểm thử tích hợp tự động (Automated Integration Testing)
 
 Để chạy file integration_tests.js một cách tự động, cần một môi trường chạy thử (Test Runner). Vì ứng dụng hiện tại không có Backend, thông thường chúng ta sử dụng Node.js kết hợp với thư viện Jest và JSDOM.
 Cách thực hiện (Thông tin bổ sung ngoài tài liệu để hỗ trợ kỹ thuật):
